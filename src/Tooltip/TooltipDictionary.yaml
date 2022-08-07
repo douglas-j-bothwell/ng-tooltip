@@ -1883,7 +1883,7 @@ summaryOfRulesHeader: |-
 
     [Learn More](https://docs.harness.io/article/ehmi6kiynl)
 ciRunTests_name:
-    content: Enter a unique step name.
+    content: Enter a unique, user-friendly step name.
     width: "400"
 ciRunTests_description: Description for the step.
 RunTests_stepName_StepConfig: The Run Tests step can be used to run tests in your CI stages. When you use Run Tests, you enable Test Intelligence for your CI stage. [Learn More](https://docs.harness.io/article/ota4xj59le)
