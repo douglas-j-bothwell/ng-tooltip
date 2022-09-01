@@ -4760,3 +4760,26 @@ includeOthers:
         The graph displayed in a Perspective shows the top 12 costs only. Enable this setting to include the remaining costs as an **Others** item in the graph. [Learn More](https://docs.harness.io/article/dvspc6ub0v)
 
     width: "400"
+Background_stepName_StepConfig:
+    content: ""
+    width: "400"
+ciBackgroundStep_name:
+    content: The name of the service that this step will run, such as **Redis BS** or **MongoDB**.
+    width: "400"
+ciBackgroundStep_description:
+    content: |
+        A description of the service that this step initiates. Include any information that another person using this pipeline might find useful. Note the following: 
+
+        - Once you start a service in a background step, it runs for the rest of the build. 
+
+        - For later steps that use this service, it's good practice to verify that the service has started before sending requests.
+    width: "400"
+ciBackgroundStep_spec.connectorRef:
+    content: |-
+        If the service requires a container, specify a connector to an image registry to download the required image.
+
+        If the pipeline is running on a VM rather than a Kubernetes build infrastructure, you can choose to run the service in a container or directly on the VM.
+    width: "400"
+ciBackgroundStep_spec.command:
+    content: If this step includes commands in both **Entry Point** and **Command**, the step will run the commands in **Entry Point** and ignore those in **Command**.
+    width: "400"
