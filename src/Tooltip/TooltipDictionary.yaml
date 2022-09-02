@@ -4764,13 +4764,13 @@ Background_stepName_StepConfig:
     content: ""
     width: "400"
 ciBackgroundStep_name:
-    content: The name of the service that this step will run, such as **Redis BS** or **MongoDB**.
+    content: The name of the service that this step will run, such as **Redis** or **MongoDB**.
     width: "400"
 ciBackgroundStep_description:
     content: |
         A description of the service that this step initiates. Include any information that another person using this pipeline might find useful. Note the following: 
 
-        - Once you start a service in a background step, it runs for the rest of the build. 
+        - Once you start a service in a background step, it runs for the rest of the stage execution. 
 
         - For later steps that use this service, it's good practice to verify that the service has started before sending requests.
     width: "400"
