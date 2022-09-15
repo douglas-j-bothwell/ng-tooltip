@@ -2563,7 +2563,7 @@ rightBarForm_depth:
     content: |
         The number of commits to fetch when Harness clones a repo.
 
-        - For manual Builds, when a user clicks **Build** in the Harness UI, the default Depth is 50 (each `git clone` operation fetches the most recent 50 commits). A setting of 0 fetches all commits in the branch.
+        - For manual Builds, when a user clicks **Run** in the Harness UI, the default Depth is 50 (each `git clone` operation fetches the most recent 50 commits). A setting of 0 fetches all commits in the branch.
         - For triggered Builds, the default Depth is 0 (fetch all commits to the branch).
 
         For details, see [https://git-scm.com/docs/git-clone](https://git-scm.com/docs/git-clone).
@@ -3785,7 +3785,7 @@ depth:
     content: |
         The number of commits to fetch when Harness clones a repo.
 
-        - For manual Builds, when a user clicks **Build** in the Harness UI, the default Depth is 50 (each `git clone` operation fetches the most recent 50 commits). A setting of 0 fetches all commits in the branch.
+        - For manual Builds, when a user clicks **Run** in the Harness UI, the default Depth is 50 (each `git clone` operation fetches the most recent 50 commits). A setting of 0 fetches all commits in the branch.
         - For triggered Builds, the default Depth is 0 (fetch all commits to the branch).
 
         For details, see [https://git-scm.com/docs/git-clone](https://git-scm.com/docs/git-clone).
