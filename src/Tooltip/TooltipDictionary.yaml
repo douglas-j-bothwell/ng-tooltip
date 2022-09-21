@@ -3425,7 +3425,7 @@ ciRunTests_spec.reportPaths:
     content: |-
         The path to the file(s) that store results in the JUnit XML format.
 
-        You can enter multiple paths. Regex is supported.
+        You can enter multiple paths. Glob is supported.
     width: "400"
 ciRunTests_spec.envVariables:
     content: Environment variables injected into the container to be used in the commands.
@@ -5136,7 +5136,6 @@ azureAuthForm_clientId:
 
         You can also use a [Pod Assigned Managed Identity](https://docs.microsoft.com/en-us/azure/aks/use-azure-ad-pod-identity).
     width: "400"
-    
 createStepTemplate_name:
     content: Enter a name for the Template.
     width: "400"
