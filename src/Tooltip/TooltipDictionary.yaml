@@ -5199,3 +5199,8 @@ variable-form_type:
 variable-form_fixedValue:
     content: Only fixed value type variables are supported.
     width: "400"
+ciRunStep_spec.reportPaths:
+    content: |-
+        The path to the file(s) that store results in the JUnit XML format.
+        You can enter multiple paths. Glob is supported.
+    width: "400"
