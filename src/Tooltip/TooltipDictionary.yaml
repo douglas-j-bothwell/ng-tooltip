@@ -2527,7 +2527,7 @@ pipelineStep.infrastructureDefinition:
 
         For example, the target Infrastructure Definition for a Kubernetes deployment. [Learn More](https://docs.harness.io/article/0ud2ut4vt2)
     width: "400"
-pipelineStep.infrastructureDefinitionMethod:
+KubernetesInfrastructureDefinitionMethod:
     content: |-
         There are different ways to connect to your target infrastructure: 
 
@@ -4902,11 +4902,11 @@ AzureWebAppRollback-EXECUTION_timeout:
 AzureTrafficShift_stepName_StepConfig:
     content: |-
         A Harness Azure Web App Canary deployment shifts traffic from one deployment slot to another incrementally. [Learn More](https://docs.harness.io/article/muegjde97q)
-        
+
         First, you select the deployment slot where the deployment will be done.
-        
+
         Next, you add Traffic Shift steps to incrementally shift traffic from the production slot to the deployment slot.
-        
+
         Finally, you swap the deployment slot with the target slot. Azure swaps the Virtual IP addresses and URLs of the deployment and target slots.
     width: "400"
 AzureTrafficShift-EXECUTION_name:
@@ -4985,7 +4985,6 @@ customRemoteManifest_filePath:
 customRemoteManifest_delegateSelectors:
     content: Select the Selector for the Delegate(s) you want to use or leave this field empty to allow Harness to select a Delegate.
     width: "400"
-
 connectorDetailsStepFormCustomSecretManager_name:
     content: Enter a name for your Custom Secret Manager. You can also edit the automatically generated Id.
     width: "400"
@@ -5004,7 +5003,6 @@ customSMForm_executionTarget.workingDirectory:
 customSMForm_templateInputs.environmentVariables:
     content: Enter value(s) for the Input Variable(s) in your script.
     width: "400"
-
 stepOverviewForm_displayName:
     content: Enter a name for the LDAP SSO provider in Harness.
     width: "400"
@@ -5059,5 +5057,146 @@ addEditGroupSetting-0_nameAttr:
 addEditGroupSetting-0_descriptionAttr:
     content: Enter the description to sync the LDAP group description.
     width: "400"
+connectorDetailsStepFormAzure_name:
+    content: |-
+        Enter a name for this Connector.
 
+        You can use the Microsoft Azure Cloud Connector to pull Azure artifacts and deploy your applications to Azure using Harness. [Learn More](https://docs.harness.io/article/9epdx5m9ae-add-a-microsoft-azure-connector)
+    width: "400"
+azureAuthForm_azureEnvironmentType:
+    content: Select Azure Global or US Government. [Learn More](https://docs.harness.io/article/9epdx5m9ae)
+    width: "400"
+azureAuthForm_applicationId:
+    content: |-
+        This is the Application (Client) Id for the Azure app registration you are using. [Learn More](https://docs.harness.io/article/9epdx5m9ae)
 
+        [See an example](https://files.helpdocs.io/i5nl071jo5/articles/9epdx5m9ae/1652392300818/clean-shot-2022-05-12-at-14-50-05.png)
+
+        It is found in the Azure Active Directory (AAD) App registrations or Managed Identity. 
+
+        For more information, see [Azure docs](https://docs.microsoft.com/en-us/azure/active-directory/develop/quickstart-v1-add-azure-ad-app).
+
+        To access resources in your Azure subscription, you must assign the Azure App registration using this Application Id to a role in that subscription.
+
+        For more information, see [Assign the application to a role](https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal#assign-the-application-to-a-role) and [Use the portal to create an Azure AD application and service principal that can access resources](https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal) from Azure.
+    width: "400"
+azureAuthForm_tenantId:
+    content: |-
+        The Tenant Id is the Id of the Azure Active Directory (AAD) in which you created your application. [Learn More](https://docs.harness.io/article/9epdx5m9ae)
+
+        [See an example](https://files.helpdocs.io/i5nl071jo5/articles/9epdx5m9ae/1652392300818/clean-shot-2022-05-12-at-14-50-05.png)
+
+        This Id is also called the Directory ID. 
+
+        For more information, see [Get tenant ID](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-create-service-principal-portal#get-tenant-id) and [Use the portal to create an Azure AD application and service principal that can access resources](https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal) from Azure.
+    width: "400"
+azureAuthForm_secretType:
+    content: |-
+        Select Secret or Certificate. [Learn More](https://docs.harness.io/article/9epdx5m9ae)
+
+        This is the authentication key for your application. This is found in Azure Active Directory, App Registrations. Click the App name. Click **Certificates & secrets**, and then click **New client secret**.
+
+        **Note:** Harness supports PEM files only. Currently, Harness does not support PFX files.
+    width: "400"
+azureAuthForm_secretText:
+    content: |-
+        Create or use an existing [Harness Text Secret](https://docs.harness.io/article/osfw70e59c).
+
+        [See an example](https://files.helpdocs.io/i5nl071jo5/articles/9epdx5m9ae/1652392300818/clean-shot-2022-05-12-at-14-50-05.png)
+
+        **Note:** Harness supports PEM files only. Currently, Harness does not support PFX files.
+    width: "400"
+azureAuthForm_secretFile:
+    content: Create or use an existing [Harness File Secret](https://docs.harness.io/article/77tfo7vtea).
+    width: "400"
+AzureConnectorDetails:
+    content: |
+        Select how you'd like Harness to authenticate with Azure. [Learn More](https://docs.harness.io/article/9epdx5m9ae)
+
+        - If you have a Harness Delegate installed in your Azure subscription (preferably in your target AKS cluster) you can select **Use the credentials of a specific Harness Delegate**.
+
+        - If you want to use credentials from your Azure registration, select **Specify credentials here**.
+
+        See an example of [Specify credentials here](https://files.helpdocs.io/i5nl071jo5/articles/9epdx5m9ae/1652392300818/clean-shot-2022-05-12-at-14-50-05.png)
+    width: "400"
+azureAuthForm_managedIdentity:
+    content: |-
+        Select **System Assigned Managed Identity** or **User Assigned Managed Identity**. [Learn More](https://docs.harness.io/article/9epdx5m9ae)
+
+        ### System Assigned Managed Identity Notes
+        - The identity used is actually the AKS cluster predefined [Kubelet Managed Identity](https://docs.microsoft.com/en-us/azure/aks/use-managed-identity#summary-of-managed-identities).
+        - The Kubelet Managed Identity (which has name format `<AKSName>-agentpool`) must have the `acrPull` permission on ACR (if used for image storage).
+        - [Control plane AKS Managed Identity](https://docs.microsoft.com/en-us/azure/aks/use-managed-identity#summary-of-managed-identities) (which has the name format `<AKSName>`) must have the **Reader** permission on the AKS cluster itself.
+    width: "400"
+azureAuthForm_clientId:
+    content: |-
+        Enter the Client Id from your Managed Identity. [Learn More](https://docs.harness.io/article/9epdx5m9ae)
+
+        [See an example](https://files.helpdocs.io/i5nl071jo5/articles/9epdx5m9ae/1654019415607/clean-shot-2022-05-31-at-10-48-35.png)
+
+        You can also use a [Pod Assigned Managed Identity](https://docs.microsoft.com/en-us/azure/aks/use-azure-ad-pod-identity).
+    width: "400"
+    
+createStepTemplate_name:
+    content: Enter a name for the Template.
+    width: "400"
+createStepTemplate_versionLabel:
+    content: Enter a version for the Template.
+    width: "400"
+createStepTemplate_connectorRef:
+    content: Select or create a Git Connector to connect to the repo for your Project. [Learn More](https://docs.harness.io/article/u1ozbrk1rh-create-a-remote-step-template#step_1_create_a_remote_step_template)
+    width: "400"
+createStepTemplate_repo:
+    content: Select your repository. Limited repositories are populated here, so if your repo is not included, enter its name. [Learn more](https://docs.harness.io/article/u1ozbrk1rh-create-a-remote-step-template#step_1_create_a_remote_step_template)
+    width: "400"
+createStepTemplate_branch:
+    content: Select your branch. Limited branches are populated here, so if your branch is not included, enter its name. [Learn more](https://docs.harness.io/article/u1ozbrk1rh-create-a-remote-step-template#step_1_create_a_remote_step_template)
+    width: "400"
+createStepTemplate_filePath:
+    content: Enter the file path. [Learn more](https://docs.harness.io/article/u1ozbrk1rh-create-a-remote-step-template#step_1_create_a_remote_step_template)
+    width: "400"
+createStageTemplate_name:
+    content: Enter a name for the Template.
+    width: "400"
+createStageTemplate_versionLabel:
+    content: Enter a version for the Template.
+    width: "400"
+createStageTemplate_connectorRef:
+    content: Select or create a Git Connector to the repo for your Project. [Learn more](https://docs.harness.io/category/xyexvcc206-ref-source-repo-provider)
+    width: "400"
+createStageTemplate_repo:
+    content: Select your repository. If your repository isn't listed, enter its name since only a select few repositories are filled here. [Learn more](https://docs.harness.io/article/e4xthq6sx0-create-a-remote-stage-template#step_1_create_a_remote_stage_template)
+    width: "400"
+createStageTemplate_branch:
+    content: Select your branch. If your branch isn't listed, enter its name since only a select few branches are filled here. [Learn more](https://docs.harness.io/article/e4xthq6sx0-create-a-remote-stage-template#step_1_create_a_remote_stage_template)
+    width: "400"
+createStageTemplate_filePath:
+    content: Enter the file path. [Learn more](https://docs.harness.io/article/e4xthq6sx0-create-a-remote-stage-template#step_1_create_a_remote_stage_template)
+    width: "400"
+createPipelineTemplate_name:
+    content: Enter a name for the Template.
+    width: "400"
+createPipelineTemplate_versionLabel:
+    content: Enter a version for the Template.
+    width: "400"
+createPipelineTemplate_connectorRef:
+    content: Select or create a Git Connector to the repo for your Project. [Learn more](https://docs.harness.io/category/xyexvcc206-ref-source-repo-provider)
+    width: "400"
+createPipelineTemplate_repo:
+    content: Select your repository. If your repository isn't listed, enter its name since only a select few repositories are filled here. [Learn more](https://docs.harness.io/article/0qu91h5rwu-create-a-remote-pipeline-template#create_a_remote_pipeline_template)
+    width: "400"
+createPipelineTemplate_branch:
+    content: Select your branch. If your branch isn't listed, enter its name since only a select few branches are filled here. [Learn more](https://docs.harness.io/article/0qu91h5rwu-create-a-remote-pipeline-template#create_a_remote_pipeline_template)
+    width: "400"
+createPipelineTemplate_filePath:
+    content: Enter the file path. [Learn more](https://docs.harness.io/article/0qu91h5rwu-create-a-remote-pipeline-template#create_a_remote_pipeline_template)
+    width: "400"
+variable-form_name:
+    content: Enter a name for the variable.
+    width: "400"
+variable-form_type:
+    content: Select the variable type.
+    width: "400"
+variable-form_fixedValue:
+    content: Only fixed value type variables are supported.
+    width: "400"
