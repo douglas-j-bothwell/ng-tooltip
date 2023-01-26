@@ -5510,7 +5510,7 @@ EcsRollingRollback_stepName_StepConfig:
 
         The old, working service is upscaled to its pre-setup number of tasks.
 
-        If ECS Service Auto Scaling is configured, it is attached to the last production service at the end of the rollback.
+        If ECS Service Auto Scaling is configured, it is attached to the last production service at the end of the rollback.
     width: "400"
 EcsCanaryDeploy_stepName_StepConfig:
     content: |-
@@ -6608,7 +6608,7 @@ chaos_tune_fault_policy_types:
     content: Type of network policy.
     width: "400"
 chaos_tune_fault_pod_selector:
-    content: Labels of destination pods. 
+    content: Labels of destination pods.
     width: "400"
 chaos_tune_fault_ports:
     content: Comma-separated list of target ports.
@@ -6722,7 +6722,7 @@ chaos_probe_cmd_type:
     content: Choose between int, float, and string type of output after executing the command in the command probe.
     width: "400"
 chaos_probe_cmd_criteria:
-    content: Depending on the command type, you need to choose a condition to compare the expected and actual output after executing the command in the command probe. 
+    content: Depending on the command type, you need to choose a condition to compare the expected and actual output after executing the command in the command probe.
     width: "400"
 chaos_probe_cmd_value:
     content: The expected value after executing the command in the command probe.
@@ -6742,7 +6742,7 @@ chaos_target_app_kind:
     content: Choose between deployment, statefulset, daemonset, deploymentconfig, and rollout that describes the kind of target application.
     width: "400"
 chaos_target_app_label:
-    content: Label of the target application. For example, nginx target application can have the label as app=nginx. 
+    content: Label of the target application. For example, nginx target application can have the label as app=nginx.
     width: "400"
 chaos_infra_cluster_scope:
     content: This scope indicates that the chaos infrastructure can access and target chaos in all the namespaces of the cluster.
@@ -7046,3 +7046,9 @@ serviceNowImportSet_spec.importData.spec.jsonBody:
 
         For details on creating a transform map, go to [Create a transform map](https://docs.servicenow.com/bundle/tokyo-platform-administration/page/script/server-scripting/task/t_CreateATransformMap.html) from ServiceNow.
     width: "450"
+os:
+    content: Select the OS where the build will run.
+    width: "400"
+poolName:
+    content: Enter the pool name as specified in the `pool.yml` setup file in your build infrastructure.
+    width: "400"
